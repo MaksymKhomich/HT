@@ -11,7 +11,6 @@ import { HabitService } from './habit.service';
 export class AppComponent {
 
   title = 'Habit tracker';
-
   
   adding = false;
   editing = false;
@@ -33,7 +32,8 @@ export class AppComponent {
     if(!localStorage['habitList']){
       localStorage.setItem('habitList','[]')
     }
-    this.habitService.getHabits().subscribe(data => this.habits = data)
+    this.habitService.getHabits()
+    .subscribe(data => this.habits = data)
   }
 
   onSubmit() {

@@ -6,8 +6,9 @@ import { Habit } from './habbits';
   providedIn: 'root'
 })
 export class HabitService {
-  habits: Habit[] = JSON.parse(localStorage['habitList']);
+
   constructor() { }
+  habits = JSON.parse(localStorage['habitList']);
 
   getHabits(): Observable<Habit[]>{
     return of(this.habits)
